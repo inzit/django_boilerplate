@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div> 
+        {% for ob in protected_object_list %}
+            <span>Object is: {{ob}} </span><br />
+        {% endfor %}
+    </div>
+
+{% endblock content %}
+    

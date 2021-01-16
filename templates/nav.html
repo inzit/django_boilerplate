@@ -1,0 +1,14 @@
+<ul id='navbar'>
+    <li><a href="/">Home</a></li>
+    <li><a href="/ldap-example/cbv">LDAP CBV</a></li>
+    <li><a href="/ldap-example/cbv_group">LDAPGroup</a></li>
+    
+    <li><a href="/ldap-example/normal">LDAP Normal</a></li>
+    <li><a href="/ldap-example/normal_group">LDAPGroup</a></li>
+
+    
+    {% if user.is_staff %}
+        <li><a href='/admin'>Admin</a></li>
+    {% endif %}
+        
+</ul>

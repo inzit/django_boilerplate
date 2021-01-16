@@ -1,0 +1,21 @@
+## OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+.vscode
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+venv/
+
+#django specifics
+migrations/
+.env
+.env.dev
+.env.prod
+db.sqlite3
+settings.py
+DataTables/
