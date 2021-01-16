@@ -165,11 +165,11 @@ AUTH_LDAP_GROUP_SEARCH = LDAPSearchUnion(
     LDAPSearch(GROUPS_DN, ldap.SCOPE_SUBTREE, "(objectClass=posixGroup)"),
 )
 
-#Use the correct group to map to django groups
+# Use the correct group to map to django groups
 AUTH_LDAP_USER_FLAGS_BY_GROUP = {
-    "is_active": "cn=django_users,cn=groups,dc=ldap,dc=example,dc=nl",
-    "is_staff": "cn=django_staff,cn=groups,dc=ldap,dc=example,dc=nl",
-    "is_superuser": "cn=django_superusers,cn=groups,dc=ldap,dc=example,dc=nl",
+    "is_active": "cn=django_users,"+GROUPS_DN,
+    "is_staff": "cn=django_staff,"+GROUPS_DN,
+    "is_superuser": "cn=django_superusers,"+GROUPS_DN,
 }
 
 # This is the default, but I like to be explicit.
@@ -183,7 +183,7 @@ AUTH_LDAP_FIND_GROUP_PERMS = True
 AUTH_LDAP_CACHE_TIMEOUT = 3600
 
 AUTH_LDAP_BIND_AS_AUTHENTICATING_USER = True
-AUTH_LDAP_BIND_DN = "user_dn"
+AUTH_LDAP_BIND_DN = "connect_user,"+USERS_DN
 AUTH_LDAP_BIND_PASSWORD = "password"
 
 AUTH_LDAP_MIRROR_GROUPS = True
