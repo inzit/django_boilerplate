@@ -20,6 +20,7 @@ In the current docker-compose.yml, a static makemigrations for LDAP is defined. 
 
 Example:
 ## Programmatically add permissions:
+    ```python
     from django.contrib.auth.models import Group, Permission
 
     ''' define a variable to contain the group, and get the group name. In this case 'django_security_group' '''
@@ -42,7 +43,7 @@ Example:
             security_group.permissions.add(permission)
     except Exception as e:
         logger.error("Could not set permissions. %s : %s", e.__str__(), __file__)
-
+    ```
         
 ## Group permissions decorator:
     ''' Decorator for checking if a user is in a group '''
