@@ -34,3 +34,17 @@ Example:
             security_group.permissions.add(permission)
     except Exception as e:
         logger.error("Could not set permissions. %s : %s", e.__str__(), __file__)
+
+        
+## Group permissions decorator:
+    ''' Decorator for checking if a user is in a group '''
+    def group_required(*group_names):
+        '''Requires user membership in at least one of the groups passed in.'''
+        def in_groups(u):
+            if u.is_authenticated:
+                if bool(u.groups.filter(name__in=group_names)) | u.is_superuser :
+                    return True
+            return False
+        return user_passes_test(in_groups, login_url='access_denied')
+
+After that, add one more groups to the decorator. See example in views.py
