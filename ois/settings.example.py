@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #LDAP example app:
+    'ldap_example',
 ]
 
 MIDDLEWARE = [
