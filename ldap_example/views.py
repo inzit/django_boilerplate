@@ -23,13 +23,14 @@ def group_required(*group_names):
 
 
 
-'''Using classbased Views: '''
+'''Using classbased Views:  ONly login required'''
 @method_decorator(login_required, name='dispatch')
 class ProtectedObjectListView(ListView):
     model = ProtectedObject
     context_object_name = 'protected_object_list'
     template_name='list_view.html'
 
+''' Login, and be a member of "django_staff" or 'django_users' ''' 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(group_required('django_staff', 'django_users'), name='dispatch')
 class ProtectedObjectListViewGroup(ListView):
@@ -45,6 +46,7 @@ def normalView(request):
     ObList = ProtectedObject.objects.all()
     return render(request, 'list_view.html', {'protected_object_list': ObList})
 
+''' login and check if user is member of 'django_staff' '''
 @login_required
 @group_required('django_staff')
 def normalUserGroup(request):
