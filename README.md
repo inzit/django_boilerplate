@@ -1,12 +1,20 @@
 ## Boilerplate for Django, including base template and example for LDAP...
 
 Adding / Removing apps:
-Via seetings.py OR! via env_file
+Via settings.py or via env_file
 
-usage: docker-compose up -d
+## usage: 
+copy ois/settings.example.py to settings.py and adjust accordingly
+(not required: copy env.example and update, and pass as argument to docker-compose, or add to docker-compose.yml)
 
-## IMPORTANT NOTE!
+    docker-compose up -d
+open browser to localhost:8000
+
+
+### IMPORTANT NOTE!
 In the current docker-compose.yml, a static makemigrations for LDAP is defined. Remove that!
+
+
 
 ## Group permissions automatically:
 
