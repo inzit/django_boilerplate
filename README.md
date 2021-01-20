@@ -11,10 +11,6 @@ copy /settings.example.py to settings.py and adjust accordingly
 open browser to localhost:8000
 
 
-### IMPORTANT NOTE!
-In the current docker-compose.yml, a static makemigrations for LDAP is defined. Remove that!
-
-
 
 ## Group permissions automatically:
 
