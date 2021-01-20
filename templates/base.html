@@ -36,6 +36,10 @@
 <!-- -------------------------------------------------------------------------------------------------------------------- -->            
             {% block content %}
             <span class='{{class}}'>{{ context_data |default:'HELLO WORLD'}}</span>
+		Welcome to the boilerplate... <br />
+		If you want to see hwo the ldap works, enable ldap_example in your settings.py and connect to your ldap server.<br/>
+		At the end of the settings file, all settings for LDAP are defined. Make sure that you have the correct groups for
+		django (see AUTH_LDAP_USER_FLAGS_BY_GROUP), and disable them, or update with your group.
 
             {% endblock content %}
 <!-- -------------------------------------------------------------------------------------------------------------------- -->            

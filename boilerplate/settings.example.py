@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #LDAP example app:
-    'ldap_example',
+    #'ldap_example',
 ]
 
 MIDDLEWARE = [
