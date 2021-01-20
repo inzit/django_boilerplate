@@ -4,15 +4,11 @@ Adding / Removing apps:
 Via settings.py or via env_file
 
 ## usage: 
-copy ois/settings.example.py to settings.py and adjust accordingly
+copy /settings.example.py to settings.py and adjust accordingly
 (not required: copy env.example and update, and pass as argument to docker-compose, or add to docker-compose.yml)
 
     docker-compose up -d
 open browser to localhost:8000
-
-
-### IMPORTANT NOTE!
-In the current docker-compose.yml, a static makemigrations for LDAP is defined. Remove that!
 
 
 

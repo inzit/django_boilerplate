@@ -4,9 +4,10 @@ services:
     web:
       container_name: django_boilerplate_server 
       build: .
-      command: /bin/sh -c "python manage.py makemigrations ldap_example && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      command: /bin/sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
       volumes:
               - .:/usr/src/app:rw
       ports:
         - "8000:8000"
-
+      #env_file: 
+      #  - .env.prod
